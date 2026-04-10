@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-foreground: #ffffff;
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+  --primary: #FF3D00;
+  --primary-foreground: #ffffff;
+  --secondary: #FFD600;
+  --secondary-foreground: #000000;
+  --muted: #1A1A1A;
+  --muted-foreground: #A0A0A0;
+  --accent: #FF9100;
+  --accent-foreground: #ffffff;
+  --destructive: #D50000;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #1A1A1A;
+  --ring: #FF3D00;
+  --radius: 0.75rem;
+  
+  /* Tiki Token Colors */
+  --tiki-red: #FF1744;
+  --tiki-orange: #FF9100;
+  --tiki-yellow: #FFEA00;
+  --tiki-green: #00E676;
+  --tiki-teal: #1DE9B6;
+  --tiki-blue: #00E5FF;
+  --tiki-purple: #D500F9;
+  --tiki-pink: #F50057;
+  --tiki-brown: #795548;
+}
+
+/* Dark mode is default */
+
+@theme {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-luckiest: var(--font-luckiest-guy);
+
+  --variant-dark: .dark &;
+
+  --color-tiki-red: var(--tiki-red);
+  --color-tiki-orange: var(--tiki-orange);
+  --color-tiki-yellow: var(--tiki-yellow);
+  --color-tiki-green: var(--tiki-green);
+  --color-tiki-teal: var(--tiki-teal);
+  --color-tiki-blue: var(--tiki-blue);
+  --color-tiki-purple: var(--tiki-purple);
+  --color-tiki-pink: var(--tiki-pink);
+  --color-tiki-brown: var(--tiki-brown);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    @apply outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Tiki title font style */
+.tiki-title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000;
+}
