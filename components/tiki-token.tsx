@@ -71,8 +71,6 @@ export function TikiToken({
     </button>
   );
 }
-  );
-}
 
 function isColorDark(color: string): boolean {
   if (!color || typeof color !== 'string' || !color.startsWith('#')) return true;
