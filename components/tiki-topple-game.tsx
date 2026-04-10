@@ -24,6 +24,8 @@ export function TikiToppleGame() {
     nextRound,
   } = useGame();
 
+  const [roomStatus, setRoomStatus] = useState({ current: 1, total: config?.numPlayers || 2 });
+
   useEffect(() => {
     socket.on("waiting-for-opponent", (data) => {
       setIsWaiting(true);
@@ -60,8 +62,6 @@ export function TikiToppleGame() {
   if (gameState.gamePhase === "setup" || !config) {
     return <GameSetup onStart={handleStart} />;
   }
-
-  const [roomStatus, setRoomStatus] = useState({ current: 1, total: config.numPlayers });
 
   if (isWaiting) {
     return (
