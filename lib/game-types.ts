@@ -23,15 +23,13 @@ export interface GameState {
   players: Player[];
   currentPlayerIndex: number;
   turn: number;
-  gamePhase: 'setup' | 'playing' | 'roundEnded' | 'ended';
+  gamePhase: 'setup' | 'playing' | 'ended';
   winner: Player | null;
   selectedTokenIndex: number | null;
   selectedCard: Card | null;
   playerHands: Card[][]; // Cards for each player
   mode: 'bot' | 'online';
   roomCode?: string;
-  currentRound: number;
-  totalRounds: number;
 }
 
 // 9 Tiki tokens matching the original game colors

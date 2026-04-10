@@ -1,10 +1,17 @@
+import React from 'react'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Luckiest_Guy } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geist = Geist({ 
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+const _geistMono = Geist_Mono({ 
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 const luckiestGuy = Luckiest_Guy({ 
   weight: "400",
   subsets: ["latin"],
@@ -40,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased ${luckiestGuy.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`font-sans antialiased ${_geist.variable} ${_geistMono.variable} ${luckiestGuy.variable}`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
