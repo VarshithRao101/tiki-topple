@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased ${luckiestGuy.variable}`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
