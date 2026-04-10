@@ -87,6 +87,7 @@ function assignSecretTikis(numPlayers: number): string[][] {
 }
 
 export function useGame(initialPlayers: number = 2) {
+  const [config, setGameConfig] = useState<any>(null);
   const [gameState, setGameState] = useState<GameState>(() =>
     createInitialState(initialPlayers)
   );
